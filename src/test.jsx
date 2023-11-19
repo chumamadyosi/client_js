@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react';
 import { ClientJS } from 'clientjs';
 
-function useDeviceFingerprint(clientId) {
+function useDeviceFingerprint() {
   const [deviceFingerprint, setDeviceFingerprint] = useState(null);
-  clientId = clientId.to
+
   useEffect(() => {
-  
+    const generateFingerprint = () => {
      
       const client = new ClientJS();
 
-      let browser = client.getUserAgent();
-     // let browser = client.getBrowserData().ua;
+      let browser = client.getBrowserData().ua;
 	    let canvasPrint = client.getCanvasPrint();
 
-	    let fingerprint = client.getCustomFingerprint(browser, canvasPrint,clientId);
+	    let fingerprint = client.getCustomFingerprint(browser, canvasPrint);
       setDeviceFingerprint(fingerprint);
-   
+    };
+
+    generateFingerprint();
   }, []); 
   return deviceFingerprint;
 };

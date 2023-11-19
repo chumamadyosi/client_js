@@ -5,7 +5,7 @@ import useDeviceFingerprint from './test';
 
 
 function App() {
-  const deviceFingerprint = useDeviceFingerprint('d');
+  const deviceFingerprint = useDeviceFingerprint();
 
   return (
     <div className="App">
