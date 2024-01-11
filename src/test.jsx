@@ -11,7 +11,7 @@ function useDeviceFingerprint() {
 
       let browser = client.getBrowserData().ua;
 	    let canvasPrint = client.getCanvasPrint();
-
+      //test this
 	    let fingerprint = client.getCustomFingerprint(browser, canvasPrint);
       setDeviceFingerprint(fingerprint);
     };
